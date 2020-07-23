@@ -30,4 +30,15 @@ public class InputValidityCheckTest {
         //then
         Assertions.assertEquals(false, isLegal);
     }
+
+    @Test
+    void should_return_false_when_check_given_number_less_than_0_and_more_than_9(){
+        //given
+        InputValidityCheck inputValidityCheck = new InputValidityCheck();
+        int[] input = {-1,2,3,4};
+        //when
+        boolean isLegal = inputValidityCheck.check(input);
+        //then
+        Assertions.assertEquals(false, isLegal);
+    }
 }
