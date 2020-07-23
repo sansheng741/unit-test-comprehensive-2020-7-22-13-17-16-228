@@ -1,4 +1,4 @@
-测试用例
+###XAXB测试用例
 
 answer: [1,2,3,4]
 
@@ -50,6 +50,40 @@ Guess
 output: 2A2B  
 
 ==================
+
+###生成答案测试用例
+
+
+given  
+GenerateAnswer类
+
+when  
+generate
+
+then  
+生成的数字个数为4个
+
+==================
+
+given  
+GenerateAnswer类
+
+when  
+generate
+
+then  
+生成的数字值在0~9之间
+
+==================
+
+given  
+GenerateAnswer类
+
+when  
+generate
+
+then  
+生成的数字个数为4个且值在0~9之间
 
 
 
