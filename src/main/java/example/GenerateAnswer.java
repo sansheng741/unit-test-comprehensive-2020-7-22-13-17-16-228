@@ -6,7 +6,7 @@ package example;
  */
 public class GenerateAnswer {
     public int[] generate() {
-        int[] answer = {1,2,3,4};
+        int[] answer = {1,2,3,-5};
         return answer;
     }
 }

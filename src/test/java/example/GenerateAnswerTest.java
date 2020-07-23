@@ -20,4 +20,22 @@ public class GenerateAnswerTest {
         //then
         Assertions.assertEquals(4, answer.length);
     }
+
+    @Test
+    void should_generate_number_between_0_and_9_when_generate_given_GenerateAnswer() {
+        //given
+        GenerateAnswer generateAnswer = new GenerateAnswer();
+
+        //when
+        int[] answer = generateAnswer.generate();
+        boolean isLegal = true;
+        for(int i = 0; i < answer.length; i++){
+            if(answer[i] < 0 || answer[i] > 9){
+                isLegal = false;
+            }
+        }
+        //then
+
+        Assertions.assertEquals(true, isLegal);
+    }
 }
