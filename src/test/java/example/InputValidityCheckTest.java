@@ -19,4 +19,15 @@ public class InputValidityCheckTest {
         //then
         Assertions.assertEquals(true, isLegal);
     }
+
+    @Test
+    void should_return_false_when_check_given_12345(){
+        //given
+        InputValidityCheck inputValidityCheck = new InputValidityCheck();
+        int[] input = {1,2,3,4,5};
+        //when
+        boolean isLegal = inputValidityCheck.check(input);
+        //then
+        Assertions.assertEquals(false, isLegal);
+    }
 }
