@@ -6,6 +6,7 @@ package example;
  */
 public class GenerateAnswer {
     public int[] generate() {
-        return null;
+        int[] answer = {1,2,3,4};
+        return answer;
     }
 }
