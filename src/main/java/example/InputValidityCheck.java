@@ -6,6 +6,9 @@ package example;
  */
 public class InputValidityCheck {
     public boolean check(int[] input) {
-        return true;
+        if (input.length == 4) {
+            return true;
+        }
+        return false;
     }
 }
