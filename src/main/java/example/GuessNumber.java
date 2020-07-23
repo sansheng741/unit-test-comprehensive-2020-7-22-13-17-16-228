@@ -10,9 +10,29 @@ public class GuessNumber {
     public String guess(int[] input, int[] answer) {
 
         int numberOfA = countA(input, answer);
-
-        return String.format("%dA0B",numberOfA);
+        int numberOfB = countB(input, answer);
+        return String.format("%dA%dB",numberOfA,numberOfB);
     }
+
+    private int countB(int[] input, int[] answer) {
+        int result = 0;
+        for(int i = 0; i < answer.length; i++){
+            if(isContain(input,answer[i])){
+                result++;
+            }
+        }
+        return result - countA(input,answer);
+    }
+
+    private boolean isContain(int[] input, int i) {
+        for (int number : input) {
+            if(number == i){
+                return true;
+            }
+        }
+        return false;
+    }
+
 
     private int countA(int[] input,int[] answer) {
         int result = 0;
