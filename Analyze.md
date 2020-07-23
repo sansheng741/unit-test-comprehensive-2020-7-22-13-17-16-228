@@ -85,6 +85,39 @@ generate
 then  
 生成的数字个数为4个且值在0~9之间
 
+###输入合法性校验测试用例
+
+given
+
+[1,2,3,4]
+
+when
+check
+
+then
+true
+
+=============
+given
+[1,2,3,4,5]
+
+when
+check
+
+then
+false
+
+=============
+
+given
+[-1,2,3,4]
+
+when
+check
+
+then
+false
+
 
 
 
