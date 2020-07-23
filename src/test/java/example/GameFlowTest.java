@@ -1,5 +1,6 @@
 package example;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -9,7 +10,7 @@ import org.junit.jupiter.api.Test;
 public class GameFlowTest {
 
     @Test
-    void should_return_true_when_check_given_four_number_from_console() {
+    void should_return_true_when_start_game_given_four_number_from_console() {
         //given
         GameFlow gameFlow = new GameFlow();
         //when

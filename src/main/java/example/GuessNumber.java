@@ -8,7 +8,6 @@ import java.util.Arrays;
  */
 public class GuessNumber {
 
-
     public String guess(int[] input, int[] answer) {
 
         int numberOfA = countA(input, answer);
