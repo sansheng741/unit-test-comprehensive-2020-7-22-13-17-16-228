@@ -6,6 +6,6 @@ package example;
  */
 public class InputValidityCheck {
     public boolean check(int[] input) {
-        return false;
+        return true;
     }
 }
