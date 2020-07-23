@@ -8,9 +8,19 @@ import java.util.Arrays;
  */
 public class GuessNumber {
     public String guess(int[] input, int[] answer) {
-        if(Arrays.equals(input,answer)){
-            return "4A0B";
+
+        int numberOfA = countA(input, answer);
+
+        return String.format("%dA0B",numberOfA);
+    }
+
+    private int countA(int[] input,int[] answer) {
+        int result = 0;
+        for(int i = 0; i < answer.length; i++){
+            if(answer[i] == input[i]){
+                result++;
+            }
         }
-        return "0A0B";
+        return result;
     }
 }
