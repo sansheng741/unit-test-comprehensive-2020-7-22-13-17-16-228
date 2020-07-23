@@ -11,8 +11,21 @@ public class GenerateAnswer {
         Random random = new Random();
         int[] answer = new int[4];
         for(int i = 0; i < 4; i++){
-            answer[i] = random.nextInt(10);
+            int number = 0;
+            do{
+                number = random.nextInt(10);
+            }while(isContain(answer,number));
+            answer[i] = number;
         }
         return answer;
+    }
+
+    private boolean isContain(int[] input, int i) {
+        for (int number : input) {
+            if(number == i){
+                return true;
+            }
+        }
+        return false;
     }
 }
