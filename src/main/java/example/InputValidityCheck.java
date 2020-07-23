@@ -6,9 +6,16 @@ package example;
  */
 public class InputValidityCheck {
     public boolean check(int[] input) {
-        if (input.length == 4) {
-            return true;
+        boolean isLegal = true;
+        for(int i = 0; i < input.length; i++){
+            if(input[i] < 0 || input[i] > 9){
+                isLegal = false;
+                break;
+            }
         }
-        return false;
+        if(input.length != 4){
+            isLegal = false;
+        }
+        return isLegal;
     }
 }
