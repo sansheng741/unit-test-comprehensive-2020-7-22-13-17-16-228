@@ -31,7 +31,7 @@ input:  [6,5,7,1]
 
 Guess  
 
-output: 0A1B  
+output: 0A1B
 
 ==================
 
