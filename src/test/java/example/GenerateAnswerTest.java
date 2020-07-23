@@ -58,7 +58,6 @@ public class GenerateAnswerTest {
             isLegal = false;
         }
         //then
-
         Assertions.assertEquals(true, isLegal);
     }
 }
