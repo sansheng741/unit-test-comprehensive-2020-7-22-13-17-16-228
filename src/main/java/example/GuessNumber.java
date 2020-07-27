@@ -16,22 +16,22 @@ public class GuessNumber {
     }
 
     private String formatResult(int numbersAndPositionsAreCorrect, int correctNumberAndIncorrectPosition) {
-        return String.format("%dA%dB",numbersAndPositionsAreCorrect,correctNumberAndIncorrectPosition);
+        return String.format("%dA%dB", numbersAndPositionsAreCorrect, correctNumberAndIncorrectPosition);
     }
 
     private int countCorrectNumberAndIncorrectPosition(int[] input, int[] answer) {
         int result = 0;
-        for(int i = 0; i < answer.length; i++){
-            if(isContain(input,answer[i])){
+        for (int i = 0; i < answer.length; i++) {
+            if (isArrContainElem(input, answer[i])) {
                 result++;
             }
         }
-        return result - countNumbersAndPositionsAreCorrect(input,answer);
+        return result - countNumbersAndPositionsAreCorrect(input, answer);
     }
 
-    private boolean isContain(int[] input, int i) {
-        for (int number : input) {
-            if(number == i){
+    private boolean isArrContainElem(int[] arr, int elem) {
+        for (int e : arr) {
+            if (e == elem) {
                 return true;
             }
         }
@@ -39,10 +39,10 @@ public class GuessNumber {
     }
 
 
-    private int countNumbersAndPositionsAreCorrect(int[] input,int[] answer) {
+    private int countNumbersAndPositionsAreCorrect(int[] input, int[] answer) {
         int result = 0;
-        for(int i = 0; i < answer.length; i++){
-            if(answer[i] == input[i]){
+        for (int i = 0; i < answer.length; i++) {
+            if (answer[i] == input[i]) {
                 result++;
             }
         }
