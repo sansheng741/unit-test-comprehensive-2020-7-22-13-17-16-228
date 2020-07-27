@@ -1,4 +1,6 @@
-import example.GameFlow;
+import example.AnswerGenerator;
+import example.Game;
+
 
 /**
  * @author ck
@@ -6,7 +8,7 @@ import example.GameFlow;
  */
 public class Main {
     public static void main(String[] args) {
-        GameFlow gameFlow = new GameFlow();
-        gameFlow.startGame();
+        Game game = new Game();
+        game.startGame();
     }
 }

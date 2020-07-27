@@ -1,10 +1,7 @@
 package example;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
-
+import java.util.*;
+import static org.mockito.Mockito.*;
 /**
  * @author ck
  * @create 2020-07-23 21:53
@@ -12,11 +9,15 @@ import java.util.Scanner;
 public class Game {
 
     private List<String> guessResultList = new ArrayList<>();
-    private AnswerGenerator generateAnswer = new AnswerGenerator();
+//    private AnswerGenerator generateAnswer = new AnswerGenerator();
     private GuessNumber guessNumber = new GuessNumber();
 
     public void startGame() {
 
+        AnswerGenerator generateAnswer = mock(AnswerGenerator.class);
+
+        // stubbing appears before the actual execution
+        when(generateAnswer.generateAnswer()).thenReturn(new int[]{1,2,3,4});
         int[] answer = generateAnswer.generateAnswer();
 
         GameProcess(answer);

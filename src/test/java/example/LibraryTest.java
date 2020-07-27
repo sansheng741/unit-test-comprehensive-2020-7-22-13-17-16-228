@@ -44,6 +44,16 @@ class LibraryTest {
 
     @Test
     @SuppressWarnings("unchecked")
+    void testMockClasses() throws Exception {
+        AnswerGenerator generateAnswer = mock(AnswerGenerator.class);
+        when(generateAnswer.generateAnswer()).thenReturn(new int[]{1,2,3,4});
+        int[] answer = generateAnswer.generateAnswer();
+
+        Assertions.assertNotNull(answer);
+    }
+
+    @Test
+    @SuppressWarnings("unchecked")
     void test_mock_verify() {
         // mock creation
         List<String> mockedList = mock(List.class);
