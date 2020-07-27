@@ -18,7 +18,7 @@ public class GuessNumberTest {
         int[] input = {1,2,3,4};
 
         //when
-        String result = guessNumber.guess(input,answer);
+        String result = guessNumber.getResult(input,answer);
 
         //then
         Assertions.assertEquals("4A0B", result);
@@ -34,7 +34,7 @@ public class GuessNumberTest {
         int[] input = {5,6,7,8};
 
         //when
-        String result = guessNumber.guess(input,answer);
+        String result = guessNumber.getResult(input,answer);
 
         //then
         Assertions.assertEquals("0A0B", result);
@@ -50,7 +50,7 @@ public class GuessNumberTest {
         int[] input = {1,6,5,9};
 
         //when
-        String result = guessNumber.guess(input,answer);
+        String result = guessNumber.getResult(input,answer);
 
         //then
         Assertions.assertEquals("1A0B", result);
@@ -64,7 +64,7 @@ public class GuessNumberTest {
         int[] input = {6,5,7,1};
 
         //when
-        String result = guessNumber.guess(input,answer);
+        String result = guessNumber.getResult(input,answer);
 
         //then
         Assertions.assertEquals("0A1B", result);
@@ -78,7 +78,7 @@ public class GuessNumberTest {
         int[] input = {4,3,2,1};
 
         //when
-        String result = guessNumber.guess(input,answer);
+        String result = guessNumber.getResult(input,answer);
 
         //then
         Assertions.assertEquals("0A4B", result);
@@ -92,7 +92,7 @@ public class GuessNumberTest {
         int[] input = {1,2,4,3};
 
         //when
-        String result = guessNumber.guess(input,answer);
+        String result = guessNumber.getResult(input,answer);
 
         //then
         Assertions.assertEquals("2A2B", result);

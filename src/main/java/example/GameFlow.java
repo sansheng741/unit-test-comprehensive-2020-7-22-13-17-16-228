@@ -24,7 +24,7 @@ public class GameFlow {
             int[] input = getGuessInput();
             boolean check = InputValidityCheck.check(input);
             if(check){
-                String guessResult = guessNumber.guess(input, answer);
+                String guessResult = guessNumber.getResult(input, answer);
                 if("4A0B".equals(guessResult)){
                     System.out.println("win, all correct");
                     break;

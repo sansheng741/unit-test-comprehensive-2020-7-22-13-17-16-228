@@ -8,7 +8,7 @@ import java.util.Arrays;
  */
 public class GuessNumber {
 
-    public String guess(int[] input, int[] answer) {
+    public String getResult(int[] input, int[] answer) {
         int numbersAndPositionsAreCorrect = countNumbersAndPositionsAreCorrect(input, answer);
         int correctNumberAndIncorrectPosition = countCorrectNumberAndIncorrectPosition(input, answer);
         return String.format("%dA%dB",numbersAndPositionsAreCorrect,correctNumberAndIncorrectPosition);
