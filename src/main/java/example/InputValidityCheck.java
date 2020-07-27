@@ -31,8 +31,8 @@ public class InputValidityCheck {
     }
 
     private static boolean isOutOfRange(int[] input) {
-        for (int i = 0; i < input.length; i++) {
-            if (input[i] < 0 || input[i] > 9) {
+        for (int e : input) {
+            if(e < 0 || e > 9){
                 return true;
             }
         }
