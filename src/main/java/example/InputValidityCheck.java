@@ -1,5 +1,8 @@
 package example;
 
+
+import java.util.stream.IntStream;
+
 /**
  * @author ck
  * @create 2020-07-23 21:13
@@ -37,12 +40,9 @@ public class InputValidityCheck {
     }
 
     private static boolean isNumberDifferent(int[] input) {
-        for (int i = 0; i < input.length; i++) {
-            for (int j = i + 1; j < input.length; j++) {
-                if (input[i] == input[j]) {
-                    return false;
-                }
-            }
+        int afterWeightRemovalLength = (int) IntStream.of(input).distinct().count();
+        if(afterWeightRemovalLength - input.length < 0){
+            return false;
         }
         return true;
     }
