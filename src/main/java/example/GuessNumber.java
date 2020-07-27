@@ -20,13 +20,13 @@ public class GuessNumber {
     }
 
     private int countCorrectNumberAndIncorrectPosition(int[] input, int[] answer) {
-        int result = 0;
+        int correctNumberAndIncorrectPosition = 0;
         for (int i = 0; i < answer.length; i++) {
             if (isArrContainElem(input, answer[i])) {
-                result++;
+                correctNumberAndIncorrectPosition++;
             }
         }
-        return result - countNumbersAndPositionsAreCorrect(input, answer);
+        return correctNumberAndIncorrectPosition - countNumbersAndPositionsAreCorrect(input, answer);
     }
 
     private boolean isArrContainElem(int[] arr, int elem) {
@@ -40,12 +40,12 @@ public class GuessNumber {
 
 
     private int countNumbersAndPositionsAreCorrect(int[] input, int[] answer) {
-        int result = 0;
+        int numbersAndPositionsAreCorrect = 0;
         for (int i = 0; i < answer.length; i++) {
             if (answer[i] == input[i]) {
-                result++;
+                numbersAndPositionsAreCorrect++;
             }
         }
-        return result;
+        return numbersAndPositionsAreCorrect;
     }
 }
