@@ -11,6 +11,11 @@ public class GuessNumber {
     public String getResult(int[] input, int[] answer) {
         int numbersAndPositionsAreCorrect = countNumbersAndPositionsAreCorrect(input, answer);
         int correctNumberAndIncorrectPosition = countCorrectNumberAndIncorrectPosition(input, answer);
+
+        return formatResult(numbersAndPositionsAreCorrect, correctNumberAndIncorrectPosition);
+    }
+
+    private String formatResult(int numbersAndPositionsAreCorrect, int correctNumberAndIncorrectPosition) {
         return String.format("%dA%dB",numbersAndPositionsAreCorrect,correctNumberAndIncorrectPosition);
     }
 
