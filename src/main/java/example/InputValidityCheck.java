@@ -20,7 +20,8 @@ public class InputValidityCheck {
     }
 
     private static boolean isInputLengthCorrect(int[] input) {
-        if (input.length == 4) {
+        int correctInputLength = 4;
+        if (input.length == correctInputLength) {
             return true;
         }
         return false;
