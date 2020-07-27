@@ -14,12 +14,14 @@ public class GameFlow {
     List<String> guessResultList = new ArrayList<>();
     GenerateAnswer generateAnswer = new GenerateAnswer();
     GuessNumber guessNumber = new GuessNumber();
-    
+
     public void startGame(){
 
         int[] answer = generateAnswer.generate();
 
-        for(int i = 0; i < 6; i++){
+        int opportunity = 6;
+
+        for(int i = 0; i < opportunity; i++){
             int[] input = getGuessInput();
             boolean check = InputValidityCheck.check(input);
             if(check){
@@ -52,8 +54,9 @@ public class GameFlow {
 
     private int[] getGuessInput() {
         Scanner sc = new Scanner(System.in);
-        int[] input = new int[4];
-        for (int i = 0; i < 4; i++) {
+        int inputLength = 4;
+        int[] input = new int[inputLength];
+        for (int i = 0; i < inputLength; i++) {
             input[i] = sc.nextInt();
         }
         return input;
