@@ -9,30 +9,35 @@ import java.util.Scanner;
  * @author ck
  * @create 2020-07-23 21:53
  */
-public class GameFlow {
+public class Game {
 
-    List<String> guessResultList = new ArrayList<>();
-    GenerateAnswer generateAnswer = new GenerateAnswer();
-    GuessNumber guessNumber = new GuessNumber();
+    private List<String> guessResultList = new ArrayList<>();
+    private AnswerGenerator generateAnswer = new AnswerGenerator();
+    private GuessNumber guessNumber = new GuessNumber();
 
-    public void startGame(){
+    public void startGame() {
 
-        int[] answer = generateAnswer.generate();
+        int[] answer = generateAnswer.generateAnswer();
 
+        GameProcess(answer);
+    }
+
+    private void GameProcess(int[] answer) {
         int opportunity = 6;
 
-        for(int i = 0; i < opportunity; i++){
+        for (int i = 0; i < opportunity; i++) {
             int[] input = getGuessInput();
-            boolean check = InputValidityCheck.check(input);
-            if(check){
+
+            if (InputValidityCheck.check(input)) {
                 String guessResult = guessNumber.getResult(input, answer);
-                if("4A0B".equals(guessResult)){
+                String allCorrect = "4A0B";
+                if (allCorrect.equals(guessResult)) {
                     System.out.println("win, all correct");
                     break;
                 }
                 //打印信息
-                printInfo(input,guessResult);
-            }else{
+                printInfo(input, guessResult);
+            } else {
                 System.out.println("Wrong Input，Input again");
             }
         }
@@ -47,7 +52,7 @@ public class GameFlow {
         for (int i = 0; i < input.length; i++) {
             currentGuessInfo.append(input[i]);
         }
-        currentGuessInfo.append("         "+guessResult);
+        currentGuessInfo.append("         " + guessResult);
         guessResultList.add(currentGuessInfo.toString());
         System.out.println(currentGuessInfo);
     }
