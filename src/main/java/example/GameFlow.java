@@ -10,16 +10,15 @@ import java.util.Scanner;
  * @create 2020-07-23 21:53
  */
 public class GameFlow {
-    Scanner sc = new Scanner(System.in);
-    List<String> guessResultList = new ArrayList<>();
 
+    List<String> guessResultList = new ArrayList<>();
+    GenerateAnswer generateAnswer = new GenerateAnswer();
+    GuessNumber guessNumber = new GuessNumber();
+    
     public void startGame(){
 
-        //游戏一开始，生成答案
-        GenerateAnswer generateAnswer = new GenerateAnswer();
         int[] answer = generateAnswer.generate();
-        //玩家通过控制台输入猜测
-        GuessNumber guessNumber = new GuessNumber();
+
         for(int i = 0; i < 6; i++){
             int[] input = getGuessInput();
             boolean check = InputValidityCheck.check(input);
@@ -52,6 +51,7 @@ public class GameFlow {
     }
 
     private int[] getGuessInput() {
+        Scanner sc = new Scanner(System.in);
         int[] input = new int[4];
         for (int i = 0; i < 4; i++) {
             input[i] = sc.nextInt();
