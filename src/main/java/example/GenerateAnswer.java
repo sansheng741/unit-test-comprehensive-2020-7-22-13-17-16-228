@@ -1,6 +1,7 @@
 package example;
 
-import java.util.Random;
+import java.util.Arrays;
+import java.util.Collections;
 
 /**
  * @author ck
@@ -8,24 +9,19 @@ import java.util.Random;
  */
 public class GenerateAnswer {
     public int[] generate() {
-        Random random = new Random();
+        int[] randomArr = getArrZeroToNine();
         int[] answer = new int[4];
-        for(int i = 0; i < 4; i++){
-            int number = 0;
-            do{
-                number = random.nextInt(10);
-            }while(isContain(answer,number));
-            answer[i] = number;
-        }
+        Collections.shuffle(Arrays.asList(randomArr));
+        System.arraycopy(randomArr, 0, answer, 0, 4);
         return answer;
     }
 
-    private boolean isContain(int[] input, int i) {
-        for (int number : input) {
-            if(number == i){
-                return true;
-            }
+    private int[] getArrZeroToNine() {
+        int[] randomArr = new int[10];
+        for (int i = 0; i < randomArr.length; i++) {
+            randomArr[i] = i;
         }
-        return false;
+        return randomArr;
     }
+
 }
