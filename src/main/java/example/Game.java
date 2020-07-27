@@ -49,8 +49,8 @@ public class Game {
             System.out.println(s);
         }
         StringBuffer currentGuessInfo = new StringBuffer();
-        for (int i = 0; i < input.length; i++) {
-            currentGuessInfo.append(input[i]);
+        for (int num : input) {
+            currentGuessInfo.append(num);
         }
         currentGuessInfo.append("         " + guessResult);
         guessResultList.add(currentGuessInfo.toString());
