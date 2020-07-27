@@ -9,20 +9,19 @@ import java.util.Arrays;
 public class GuessNumber {
 
     public String guess(int[] input, int[] answer) {
-
-        int numberOfA = countA(input, answer);
-        int numberOfB = countB(input, answer);
-        return String.format("%dA%dB",numberOfA,numberOfB);
+        int numbersAndPositionsAreCorrect = countNumbersAndPositionsAreCorrect(input, answer);
+        int correctNumberAndIncorrectPosition = countCorrectNumberAndIncorrectPosition(input, answer);
+        return String.format("%dA%dB",numbersAndPositionsAreCorrect,correctNumberAndIncorrectPosition);
     }
 
-    private int countB(int[] input, int[] answer) {
+    private int countCorrectNumberAndIncorrectPosition(int[] input, int[] answer) {
         int result = 0;
         for(int i = 0; i < answer.length; i++){
             if(isContain(input,answer[i])){
                 result++;
             }
         }
-        return result - countA(input,answer);
+        return result - countNumbersAndPositionsAreCorrect(input,answer);
     }
 
     private boolean isContain(int[] input, int i) {
@@ -35,7 +34,7 @@ public class GuessNumber {
     }
 
 
-    private int countA(int[] input,int[] answer) {
+    private int countNumbersAndPositionsAreCorrect(int[] input,int[] answer) {
         int result = 0;
         for(int i = 0; i < answer.length; i++){
             if(answer[i] == input[i]){
