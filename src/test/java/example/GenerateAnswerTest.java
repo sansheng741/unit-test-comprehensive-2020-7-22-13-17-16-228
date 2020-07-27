@@ -12,10 +12,10 @@ public class GenerateAnswerTest {
     @Test
     void should_generate_four_number_when_generate_given_GenerateAnswer() {
         //given
-        GenerateAnswer generateAnswer = new GenerateAnswer();
+        AnswerGenerator generateAnswer = new AnswerGenerator();
 
         //when
-        int[] answer = generateAnswer.generate();
+        int[] answer = generateAnswer.generateAnswer();
 
         //then
         Assertions.assertEquals(4, answer.length);
@@ -24,10 +24,10 @@ public class GenerateAnswerTest {
     @Test
     void should_generate_number_between_0_and_9_when_generate_given_GenerateAnswer() {
         //given
-        GenerateAnswer generateAnswer = new GenerateAnswer();
+        AnswerGenerator generateAnswer = new AnswerGenerator();
 
         //when
-        int[] answer = generateAnswer.generate();
+        int[] answer = generateAnswer.generateAnswer();
         boolean isLegal = true;
         for(int i = 0; i < answer.length; i++){
             if(answer[i] < 0 || answer[i] > 9){
@@ -43,10 +43,10 @@ public class GenerateAnswerTest {
     @Test
     void should_generate_four_number_and_number_between_0_and_9_when_generate_given_GenerateAnswer() {
         //given
-        GenerateAnswer generateAnswer = new GenerateAnswer();
+        AnswerGenerator generateAnswer = new AnswerGenerator();
 
         //when
-        int[] answer = generateAnswer.generate();
+        int[] answer = generateAnswer.generateAnswer();
         boolean isLegal = true;
         for(int i = 0; i < answer.length; i++){
             if(answer[i] < 0 || answer[i] > 9){

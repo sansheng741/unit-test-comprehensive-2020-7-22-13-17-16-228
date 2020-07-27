@@ -7,8 +7,8 @@ import java.util.Collections;
  * @author ck
  * @create 2020-07-23 20:49
  */
-public class GenerateAnswer {
-    public int[] generate() {
+public class AnswerGenerator {
+    public int[] generateAnswer() {
         int[] randomArr = getArrZeroToNine();
         int[] answer = new int[4];
         Collections.shuffle(Arrays.asList(randomArr));
